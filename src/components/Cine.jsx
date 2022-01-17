@@ -24,23 +24,17 @@ import {
 import html2canvas from "html2canvas";
 import { LogoSvg, WaveSvg } from "../icons";
 
-
-const api_key = process.env.API_KEY;
-
-console.log(process.env.API_KEY);
-
 export function Cine() {
-  async function get() {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.API_KEY}&language=pt-BR&page=1`
-    );
-
-    const data = await response.json();
-    setMovies(data.results);
-    console.log(data);
-  }
-  
   useEffect(() => {
+    async function get() {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=pt-BR&page=1`
+      );
+
+      const data = await response.json();
+      setMovies(data.results);
+      console.log(data);
+    }
     get();
   }, []);
 
@@ -164,7 +158,7 @@ export function Cine() {
                   </Center>
                   <Editable fontSize={24} defaultValue="17:30 E 20:30">
                     <EditablePreview />
-                    <EditableInput />
+                    <EditableInput w={150}/>
                   </Editable>
                   {/* <Heading fontWeight="normal" fontSize={24}>
                   17:30 E 20:30
@@ -204,10 +198,10 @@ export function Cine() {
             </Button>
           </>
         ) : (
-          <Heading>Nenhum filme encontrado</Heading>
+          <Heading>Selecione um filme</Heading>
         )}
         <Wrap pt={4} justify="center">
-          {movies &&
+          {movies ? (
             movies.map((movie) => (
               <HStack onClick={() => setSelectedMovie(movie)} key={movie.id}>
                 <Image
@@ -220,7 +214,10 @@ export function Cine() {
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 />
               </HStack>
-            ))}
+            ))
+          ) : (
+            <Heading>Nenhum filme encontrado</Heading>
+          )}
         </Wrap>
       </Flex>
     </Flex>
