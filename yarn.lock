@@ -1920,6 +1920,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base64-arraybuffer@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "base64-arraybuffer@npm:0.2.0"
+  checksum: eaf06558fe9bc250f1c43fcd316e6c726da494e93cc195ff472da61874b75d3bb9e93f3a3d4fd0da13630214eb5a9dbeeec249d085b70d10c8b21990fdae8086
+  languageName: node
+  linkType: hard
+
+"base64-arraybuffer@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "base64-arraybuffer@npm:1.0.1"
+  checksum: 04b6fe6818b1c79774fa8aea169063521ad177f2ba04d2a4a0f00fca297d516319b551a3cda76050263da751b4ffb07d939fc1b5eb155f0e429659733e60afb0
+  languageName: node
+  linkType: hard
+
 "base64-js@npm:^1.0.2":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
@@ -2453,6 +2467,15 @@ __metadata:
   dependencies:
     tiny-invariant: ^1.0.6
   checksum: 4d113f26fed6b9150e2c314502d00dabe06f12ae43a01a7e9b6e57f3de49b4281dbb0dc46a1158a7349618f8f34d9250af57cb43d7337e9485e73e6b821e470e
+  languageName: node
+  linkType: hard
+
+"css-line-break@npm:2.0.1":
+  version: 2.0.1
+  resolution: "css-line-break@npm:2.0.1"
+  dependencies:
+    base64-arraybuffer: ^0.2.0
+  checksum: 71ea449986bc2f8d1cfebe102a5a6f9419c3f6ebb4b622ac0f530a6aa2d1d8de0f4688a2c09a85486cfb074eed59eeaf226dc2fd3727295885553b489abf63fd
   languageName: node
   linkType: hard
 
@@ -3580,6 +3603,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"html2canvas@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "html2canvas@npm:1.4.0"
+  dependencies:
+    css-line-break: 2.0.1
+    text-segmentation: ^1.0.2
+  checksum: dab330799ab379f552c1b4b9359c31a9096d9ee71222b34760fa8890d271215ac616f65fb937330c048451a46bb9cda455169da2c36320c166af16e7892659a9
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.0":
   version: 4.1.0
   resolution: "http-cache-semantics@npm:4.1.0"
@@ -4515,6 +4548,7 @@ __metadata:
     eslint: 7.32.0
     eslint-config-next: 11.1.0
     framer-motion: ^5
+    html2canvas: ^1.4.0
     next: ^12.0.7
     react: latest
     react-dom: latest
@@ -5900,6 +5934,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"text-segmentation@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "text-segmentation@npm:1.0.2"
+  dependencies:
+    utrie: ^1.0.1
+  checksum: 087ae66abef4f2b6ecd7a3aff1c0ed6f84e0dd3bb92d339237b6d15e6227cab5b1cfcef95b9734713e1026bdaa9d3207585cabac277049aa3e8a9187d93c10da
+  languageName: node
+  linkType: hard
+
 "text-table@npm:^0.2.0":
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
@@ -6129,6 +6172,15 @@ __metadata:
     safe-buffer: ^5.1.2
     which-typed-array: ^1.1.2
   checksum: 8eac7a6e6b341c0f1b3eb73bbe5dfcae31a7e9699c8fc3266789f3e95f7637946a7700dcf1904dbd3749a58a36760ebf7acf4bb5b717f7468532a8a79f44eff0
+  languageName: node
+  linkType: hard
+
+"utrie@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "utrie@npm:1.0.1"
+  dependencies:
+    base64-arraybuffer: ^1.0.1
+  checksum: 7c021a0b581ab55d57c4436c1431e64b31a920e037d4f3c7139a670be64232a5426142b1523351f7852a1c7e777755701fd96a5aeb82fc35eb8722cc7b01b868
   languageName: node
   linkType: hard
 

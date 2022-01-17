@@ -13,3 +13,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+body {
+  line-height: 0.5 !important;
+}
+
+#capture {
+  line-height: normal;
+}
