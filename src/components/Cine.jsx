@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from "react";
-import {
-  Flex,
-  Heading,
-} from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import html2canvas from "html2canvas";
 import { Arte } from "./Arte";
 import { BotoesDownload } from "./BotoesDownload";
 import { ListaDeFilmes } from "./ListaDeFilmes";
 
-// import { movies } from "./movies";
+import { localMovies } from "./movies";
 
 export function Cine() {
+  
   useEffect(() => {
     async function get() {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=pt-BR&page=1`
-      );
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=pt-BR&page=1`
+        );
 
-      const data = await response.json();
-      setMovies(data.results);
+        const data = await response.json();
+        setMovies(data.results);
+      } catch (err) {
+        console.log("Busca falhou, exibindo filmes estáticos");
+      }
     }
     get();
   }, []);
 
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([...localMovies]);
 
   const [selectedMovie, setSelectedMovie] = useState([]);
 
@@ -60,26 +62,20 @@ export function Cine() {
   }
 
   return (
-    <Flex
-      overflow="hidden"
-      flexDir="column"
-      as="section"
-      justify="center"
-      align="center"
-    >
+    <>
       {selectedMovie.id ? (
-        <>
-          <Arte selectedMovie={selectedMovie} />
-          <BotoesDownload salvar={salvar} />
-        </>
+        <Arte selectedMovie={selectedMovie} />
       ) : (
-        <Heading>Selecione um filme</Heading>
+        <Heading pt={10} textAlign="center">
+          Selecione um filme
+        </Heading>
       )}
+      {selectedMovie.id && <BotoesDownload salvar={salvar} />}
       <ListaDeFilmes
         setSelectedMovie={setSelectedMovie}
         movies={movies}
         selectedMovie={selectedMovie}
       />
-    </Flex>
+    </>
   );
 }

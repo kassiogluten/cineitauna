@@ -1,21 +1,5 @@
-export const movies = [
-  {
-    adult: false,
-    backdrop_path: "/tutaKitJJIaqZPyMz7rxrhb4Yxm.jpg",
-    genre_ids: [16, 35, 10751, 10402],
-    id: 438695,
-    original_language: "en",
-    original_title: "Sing 2",
-    overview:
-      "Buster Moon e seus amigos devem persuadir o recluso astro do rock Clay Calloway a se juntar a eles para a abertura de um novo show.",
-    popularity: 9205.508,
-    poster_path: "/aWeKITRFbbwY8txG5uCj4rMCfSP.jpg",
-    release_date: "2021-12-01",
-    title: "Sing 2",
-    video: false,
-    vote_average: 8.3,
-    vote_count: 883,
-  },
+export const localMovies = [
+
   {
     adult: false,
     backdrop_path: "/1Rr5SrvHxMXHu5RjKpaMba8VTzi.jpg",

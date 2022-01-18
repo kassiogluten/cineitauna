@@ -8,7 +8,7 @@ import {
 import { FaDownload } from "react-icons/fa";
 
 export const BotoesDownload = ({ salvar }) => (
-  <VStack w="full">
+  <VStack overflowX="hidden" w="full">
     <Heading py={4}>Baixar Imagem</Heading>
     <Wrap justify="center" py={4}>
       <Button onClick={salvar} leftIcon={<FaDownload />}>

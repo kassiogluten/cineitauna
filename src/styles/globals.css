@@ -16,6 +16,7 @@ a {
 
 body {
   line-height: 0.5 !important;
+  overflow-x: hidden;
 }
 
 #capture {

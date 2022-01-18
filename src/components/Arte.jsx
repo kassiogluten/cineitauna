@@ -1,22 +1,15 @@
-import React, {  } from "react";
-import {
-  Flex,
-  Heading,
-  VStack,
-  Image,
-  Box,
-} from "@chakra-ui/react";
+import React from "react";
+import { Flex, Heading, VStack, Image, Box } from "@chakra-ui/react";
 import { Capa } from "./Capa";
 
 export const Arte = ({ selectedMovie }) => (
-  <Flex p="1rem" align="center" flexDir="column">
+  <Flex overflow="scroll" flexDir="column">
     <VStack
       h={1000}
       w={1000}
       pos="relative"
       id="capture"
       bg="#001F71"
-      my={4}
       justify="space-between"
       maxW={1000}
     >
@@ -32,6 +25,7 @@ export const Arte = ({ selectedMovie }) => (
           wordBreak="break-word"
           fontSize={80}
           p={14}
+          sx={{ strong: { fontWeight: 900 } }}
         >
           EM <strong>CARTAZ</strong>
         </Heading>
