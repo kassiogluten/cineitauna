@@ -14,8 +14,8 @@ export const Arte = ({ selectedMovie }) => (
       maxW={1000}
     >
       <Box
-        background={`linear-gradient( rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.2)100%), url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path}) no-repeat center `}
-        bgSize="cover"
+        background={`linear-gradient( rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.2)100%), url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path}) no-repeat center / cover`}
+        /* background={`linear-gradient( rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.2)100%), url(https://image.tmdb.org/t/p/w500${selectedMovie.backdrop_path}) no-repeat center / cover`} */
         w="full"
         h={500}
       >
