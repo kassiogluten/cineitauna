@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Cine } from "../components/Cine";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <meta property="og:image" content="/logo.png" key="ogimage" />
       </Head>
       <Cine />
+      <Footer />
     </>
   );
 }

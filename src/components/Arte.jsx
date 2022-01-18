@@ -11,7 +11,6 @@ import { Capa } from "./Capa";
 export const Arte = ({ selectedMovie }) => (
   <Flex p="1rem" align="center" flexDir="column">
     <VStack
-      overflow="scroll"
       h={1000}
       w={1000}
       pos="relative"
